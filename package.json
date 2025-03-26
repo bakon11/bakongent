@@ -1,0 +1,52 @@
+{
+  "name": "bakongent",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "description": "Simple idea for ai agent framework. Starting point to plugin any LLM you want.",
+  "scripts": {
+    "lint": "eslint src/* --ext .ts --fix",
+    "service": "nodemon",
+    "start": "ts-node src/index.ts",
+    "release": "standard-version",
+    "test:local": "jest --setupFiles dotenv/config --ci -i --forceExit",
+    "test:ci": "jest --ci -i"
+  },
+  "author": "bakon <bakon@onchainapps.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "@jest/types": "^29.6.3",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.13",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "dotenv": "^16.4.7",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.2.5",
+    "eslint-plugin-promise": "^7.2.1",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.3.0",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.2"
+  },
+  "nodemonConfig": {
+    "watch": [
+      ".env",
+      "src"
+    ],
+    "ext": "ts",
+    "ignore": [
+      "src/**/*.test.ts"
+    ],
+    "exec": "npx ts-node -r dotenv/config ./src/index"
+  }
+}
